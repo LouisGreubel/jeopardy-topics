@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="A personal Jeopardy! clue study tool."
+    >
+
+    <title>JQuiz</title>
+
+    <link
+        rel="icon"
+        href="favicon.svg"
+        type="image/svg+xml"
+    >
+
+    <link
+        rel="stylesheet"
+        href="styles.css"
+    >
+</head>
+
+
+<body>
+
+    <main class="app-shell">
+
+        <!-- ==================================================
+             HEADER
+        =================================================== -->
+
+        <header class="app-header">
+
+            <p class="eyebrow">
+                Study Tool
+            </p>
+
+            <h1>
+                J! Quiz
+            </h1>
+
+            <p class="intro">
+                Study random Jeopardy! clues from 2019 to 2025.
+                Leave all topics unselected to draw from every topic,
+                or choose one or more topics to narrow the focus.
+            </p>
+
+        </header>
+
+
+        <!-- ==================================================
+             TOPIC SELECTOR
+        =================================================== -->
+
+        <section
+            class="topic-panel"
+            aria-labelledby="topic-title"
+        >
+
+            <div class="panel-heading">
+
+                <div>
+                    <h2 id="topic-title">
+                        Choose Topics
+                    </h2>
+
+                    <p class="topic-help">
+                        No selection means every topic is eligible.
+                    </p>
+                </div>
+
+
+                <button
+                    class="text-button"
+                    id="clear-topics"
+                    type="button"
+                >
+                    Clear Selections
+                </button>
+
+            </div>
+
+
+            <!-- Topic search -->
+
+            <div class="topic-search-area">
+
+                <label
+                    class="visually-hidden"
+                    for="topic-search"
+                >
+                    Search topics
+                </label>
+
+                <input
+                    id="topic-search"
+                    class="topic-search"
+                    type="search"
+                    placeholder="Search topics..."
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+            <!--
+                JavaScript will create all 104 topic
+                checkboxes inside this container.
+            -->
+
+            <fieldset class="topic-fieldset">
+
+                <legend class="visually-hidden">
+                    Select one or more clue topics
+                </legend>
+
+                <div
+                    class="topic-list"
+                    id="topic-list"
+                >
+                    <p class="loading-message">
+                        Loading topics...
+                    </p>
+                </div>
+
+            </fieldset>
+
+
+            <!-- Shows how many topics/clues are selected -->
+
+            <p
+                class="selection-summary"
+                id="selection-summary"
+                aria-live="polite"
+            >
+                Loading clue database...
+            </p>
+
+        </section>
+
+
+        <!-- ==================================================
+             CLUE CARD
+        =================================================== -->
+
+        <section
+            class="clue-card"
+            id="clue-card"
+            role="button"
+            tabindex="0"
+            aria-label="Reveal response for current clue"
+            aria-expanded="false"
+        >
+
+            <!-- Category -->
+
+            <div class="category-area">
+
+                <p class="card-label">
+                    Category
+                </p>
+
+                <h2 id="category-text">
+                    Loading...
+                </h2>
+
+            </div>
+
+
+            <!-- Clue -->
+
+            <div class="clue-area">
+
+                <p
+                    class="clue-text"
+                    id="clue-text"
+                >
+                    Loading your clue database...
+                </p>
+
+            </div>
+
+
+            <!--
+                Hidden until the Response button is pressed.
+            -->
+
+            <div
+                class="answer-panel"
+                id="answer-panel"
+                hidden
+            >
+
+                <div class="answer-heading">
+
+                    <p class="card-label">
+                        Correct Response
+                    </p>
+
+
+                    <!--
+                        The clue's monetary value will appear here.
+                        Examples:
+                        $400
+                        $2,000
+                        Final Jeopardy!
+                    -->
+
+                    <span
+                        class="clue-value"
+                        id="clue-value"
+                    ></span>
+
+                </div>
+
+
+                <p
+                    class="response-text"
+                    id="response-text"
+                ></p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             CONTROLS
+        =================================================== -->
+
+        <div class="controls">
+
+            <button
+                class="button button-primary"
+                id="new-clue"
+                type="button"
+                disabled
+            >
+                New Clue
+            </button>
+
+        </div>
+
+
+        <!-- ==================================================
+             STATUS MESSAGE
+        =================================================== -->
+
+        <p
+            class="status-message"
+            id="status-message"
+            aria-live="polite"
+        >
+            Loading clue database...
+        </p>
+
+    </main>
+
+
+    <!--
+        JavaScript goes last so the page elements above
+        already exist before app.js tries to use them.
+    -->
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>

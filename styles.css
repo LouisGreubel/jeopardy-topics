@@ -1,0 +1,1400 @@
+/* ==========================================================
+   JQUIZ
+   Main stylesheet
+   ========================================================== */
+
+
+/* ----------------------------------------------------------
+   COLOR / DESIGN VARIABLES
+   ---------------------------------------------------------- */
+
+:root {
+    color-scheme: dark;
+
+    --page-background: #02040b;
+    --page-background-light: #071126;
+
+    --surface: #091120;
+    --surface-raised: #0f1b30;
+    --surface-soft: #0b1a35;
+
+    --text: #f6f8ff;
+    --muted-text: #a8b7ce;
+
+    --border: #2b527d;
+    --border-soft: rgb(142 200 255 / 18%);
+
+    --game-blue: #0d3b92;
+    --game-blue-bright: #2d80de;
+    --game-blue-dark: #03143f;
+
+    --gold: #fab882;
+    --gold-strong: #e79a5f;
+    --gold-dark: #9d5b34;
+
+    --ice-blue: #8ec8ff;
+
+    --answer-background: #0c172a;
+
+    --success: #a8e6b0;
+    --danger: #ffaaa6;
+
+    --shadow:
+        0 24px 70px rgb(0 0 0 / 55%);
+}
+
+
+/* ----------------------------------------------------------
+   GLOBAL RESET
+   ---------------------------------------------------------- */
+
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    min-height: 100%;
+}
+
+
+body {
+    position: relative;
+    isolation: isolate;
+
+    margin: 0;
+    min-height: 100vh;
+
+    padding: 20px;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: var(--text);
+
+    background:
+        radial-gradient(
+            circle at 12% 0%,
+            rgb(45 128 222 / 20%),
+            transparent 32rem
+        ),
+        radial-gradient(
+            circle at 92% 5%,
+            rgb(250 184 130 / 11%),
+            transparent 26rem
+        ),
+        linear-gradient(
+            180deg,
+            #050914 0%,
+            var(--page-background) 55%,
+            #010208 100%
+        );
+
+    background-attachment: fixed;
+}
+
+
+/*
+   Small stage-light effect in the background.
+*/
+
+body::before {
+    content: "";
+
+    position: fixed;
+    z-index: 0;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 7% 5%,
+            rgb(255 255 255 / 55%) 0 1px,
+            transparent 2px
+        ),
+        radial-gradient(
+            circle at 18% 13%,
+            rgb(142 200 255 / 45%) 0 1px,
+            transparent 2px
+        ),
+        radial-gradient(
+            circle at 31% 4%,
+            rgb(255 255 255 / 45%) 0 1px,
+            transparent 2px
+        ),
+        radial-gradient(
+            circle at 46% 11%,
+            rgb(250 184 130 / 45%) 0 1px,
+            transparent 2px
+        ),
+        radial-gradient(
+            circle at 61% 3%,
+            rgb(255 255 255 / 50%) 0 1px,
+            transparent 2px
+        ),
+        radial-gradient(
+            circle at 74% 14%,
+            rgb(142 200 255 / 50%) 0 1px,
+            transparent 2px
+        ),
+        radial-gradient(
+            circle at 89% 7%,
+            rgb(250 184 130 / 50%) 0 1px,
+            transparent 2px
+        );
+
+    opacity: 0.7;
+}
+
+
+/* ----------------------------------------------------------
+   GENERAL ELEMENTS
+   ---------------------------------------------------------- */
+
+button,
+input {
+    font: inherit;
+}
+
+
+button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+button,
+input[type="checkbox"] {
+    cursor: pointer;
+}
+
+
+[hidden] {
+    display: none !important;
+}
+
+
+::selection {
+    background: var(--gold);
+    color: #211207;
+}
+
+
+/*
+   Used for accessible labels that should be available to
+   screen readers without appearing visually.
+*/
+
+.visually-hidden {
+    position: absolute !important;
+
+    width: 1px !important;
+    height: 1px !important;
+
+    padding: 0 !important;
+    margin: -1px !important;
+
+    overflow: hidden !important;
+
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+
+    border: 0 !important;
+}
+
+
+/* ----------------------------------------------------------
+   MAIN APP SHELL
+   ---------------------------------------------------------- */
+
+.app-shell {
+    position: relative;
+    z-index: 1;
+
+    width: min(100%, 960px);
+
+    margin: 0 auto;
+
+    padding: 24px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgb(15 27 48 / 98%),
+            rgb(7 13 27 / 98%)
+        );
+
+    border:
+        1px solid var(--border-soft);
+
+    border-radius: 22px;
+
+    box-shadow:
+        var(--shadow),
+        inset 0 1px 0 rgb(255 255 255 / 5%);
+}
+
+
+/* ----------------------------------------------------------
+   HEADER
+   ---------------------------------------------------------- */
+
+.app-header {
+    margin-bottom: 28px;
+
+    text-align: center;
+}
+
+
+.eyebrow {
+    margin: 0 0 8px;
+
+    color: var(--gold);
+
+    font-size: 0.78rem;
+    font-weight: 800;
+
+    letter-spacing: 0.14em;
+
+    text-transform: uppercase;
+}
+
+
+h1 {
+    margin: 0;
+
+    color: var(--text);
+
+    font-size:
+        clamp(
+            2.2rem,
+            7vw,
+            3.75rem
+        );
+
+    line-height: 1;
+
+    letter-spacing: -0.03em;
+
+    text-shadow:
+        0 0 28px rgb(45 128 222 / 25%),
+        0 2px 8px rgb(0 0 0 / 50%);
+}
+
+
+.intro {
+    max-width: 700px;
+
+    margin:
+        16px auto 0;
+
+    color: var(--muted-text);
+
+    font-size: 1rem;
+    line-height: 1.65;
+}
+
+
+/* ----------------------------------------------------------
+   TOPIC PANEL
+   ---------------------------------------------------------- */
+
+.topic-panel {
+    margin-bottom: 24px;
+
+    padding: 20px;
+
+    border:
+        1px solid
+        rgb(142 200 255 / 22%);
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgb(11 26 53 / 88%),
+            rgb(7 18 40 / 88%)
+        );
+
+    box-shadow:
+        inset 0 1px 0
+        rgb(255 255 255 / 4%),
+        0 12px 30px
+        rgb(0 0 0 / 18%);
+}
+
+
+.panel-heading {
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 16px;
+}
+
+
+.panel-heading h2 {
+    margin: 0;
+
+    font-size: 1.25rem;
+
+    color: var(--text);
+}
+
+
+.topic-help {
+    margin:
+        6px 0 0;
+
+    color: var(--muted-text);
+
+    font-size: 0.9rem;
+    font-style: italic;
+    line-height: 1.45;
+}
+
+
+/* ----------------------------------------------------------
+   CLEAR SELECTION BUTTON
+   ---------------------------------------------------------- */
+
+.text-button {
+    flex: 0 0 auto;
+
+    min-height: 40px;
+
+    padding:
+        7px 16px;
+
+    border:
+        1px solid
+        rgb(250 184 130 / 45%);
+
+    border-radius: 999px;
+
+    background:
+        rgb(250 184 130 / 8%);
+
+    color: var(--gold);
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+.text-button:hover {
+    border-color:
+        rgb(250 184 130 / 75%);
+
+    background:
+        rgb(250 184 130 / 14%);
+
+    color: #ffd0a7;
+}
+
+
+.text-button:focus-visible {
+    outline:
+        3px solid
+        var(--ice-blue);
+
+    outline-offset: 4px;
+
+    border-radius: 4px;
+}
+
+
+/* ----------------------------------------------------------
+   TOPIC SEARCH
+   ---------------------------------------------------------- */
+
+.topic-search-area {
+    margin-bottom: 14px;
+}
+
+
+.topic-search {
+    width: 100%;
+
+    min-height: 46px;
+
+    padding:
+        10px 14px;
+
+    border:
+        1px solid
+        rgb(142 200 255 / 28%);
+
+    border-radius: 10px;
+
+    background:
+        rgb(2 9 24 / 76%);
+
+    color: var(--text);
+
+    outline: none;
+
+    transition:
+        border-color 150ms ease,
+        box-shadow 150ms ease,
+        background 150ms ease;
+}
+
+
+.topic-search::placeholder {
+    color: #7185a2;
+}
+
+
+.topic-search:hover {
+    border-color:
+        rgb(142 200 255 / 45%);
+}
+
+
+.topic-search:focus {
+    border-color:
+        var(--ice-blue);
+
+    background:
+        rgb(4 15 36 / 96%);
+
+    box-shadow:
+        0 0 0 3px
+        rgb(142 200 255 / 14%);
+}
+
+
+/* ----------------------------------------------------------
+   TOPIC FIELDSET
+   ---------------------------------------------------------- */
+
+.topic-fieldset {
+    margin: 0;
+
+    padding: 0;
+
+    border: 0;
+}
+
+
+/*
+   JavaScript will place the topic checkboxes inside here.
+*/
+
+.topic-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(0, 1fr)
+        );
+
+    gap: 8px;
+
+    max-height: 310px;
+
+    padding: 10px;
+
+    overflow-y: auto;
+
+    overscroll-behavior: contain;
+
+    border:
+        1px solid
+        rgb(142 200 255 / 16%);
+
+    border-radius: 12px;
+
+    background:
+        rgb(1 7 20 / 48%);
+
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        var(--game-blue-bright)
+        var(--game-blue-dark);
+}
+
+
+.topic-list::-webkit-scrollbar {
+    width: 10px;
+}
+
+
+.topic-list::-webkit-scrollbar-track {
+    background:
+        var(--game-blue-dark);
+
+    border-radius: 10px;
+}
+
+
+.topic-list::-webkit-scrollbar-thumb {
+    background:
+        var(--game-blue-bright);
+
+    border:
+        2px solid
+        var(--game-blue-dark);
+
+    border-radius: 10px;
+}
+
+
+/* ----------------------------------------------------------
+   TOPIC CHECKBOX
+   ---------------------------------------------------------- */
+
+/*
+   app.js will create HTML like:
+
+   <label class="topic-option">
+       <input type="checkbox" ...>
+       <span class="topic-option-text">
+           Animals
+       </span>
+   </label>
+*/
+
+.topic-option {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    min-height: 42px;
+
+    padding:
+        8px 10px;
+
+    border:
+        1px solid
+        rgb(142 200 255 / 12%);
+
+    border-radius: 9px;
+
+    background:
+        rgb(15 34 68 / 55%);
+
+    color:
+        #dce7f7;
+
+    font-size: 0.9rem;
+    line-height: 1.25;
+
+    cursor: pointer;
+
+    transition:
+        background 130ms ease,
+        border-color 130ms ease,
+        transform 130ms ease,
+        color 130ms ease;
+}
+
+
+.topic-option:hover {
+    border-color:
+        rgb(142 200 255 / 40%);
+
+    background:
+        rgb(20 48 94 / 72%);
+}
+
+
+.topic-option:active {
+    transform:
+        translateY(1px);
+}
+
+
+.topic-option input {
+    flex: 0 0 auto;
+
+    width: 17px;
+    height: 17px;
+
+    margin: 0;
+
+    accent-color:
+        var(--game-blue-bright);
+}
+
+
+.topic-option:has(
+    input:checked
+) {
+    border-color:
+        rgb(250 184 130 / 75%);
+
+    background:
+        linear-gradient(
+            180deg,
+            rgb(72 49 38 / 90%),
+            rgb(48 32 30 / 90%)
+        );
+
+    color:
+        #fff3e9;
+
+    box-shadow:
+        inset 0 0 0 1px
+        rgb(250 184 130 / 10%);
+}
+
+
+.topic-option:has(
+    input:focus-visible
+) {
+    outline:
+        3px solid
+        var(--ice-blue);
+
+    outline-offset: 2px;
+}
+
+
+.topic-option-text {
+    min-width: 0;
+
+    overflow-wrap: anywhere;
+}
+
+
+/*
+   app.js can apply this class when a topic does not match
+   the search box.
+*/
+
+.topic-option.is-filtered-out {
+    display: none;
+}
+
+
+/* ----------------------------------------------------------
+   TOPIC LOADING MESSAGE / SELECTION SUMMARY
+   ---------------------------------------------------------- */
+
+.loading-message {
+    grid-column:
+        1 / -1;
+
+    margin: 18px;
+
+    color:
+        var(--muted-text);
+
+    text-align: center;
+}
+
+
+.selection-summary {
+    margin:
+        14px 2px 0;
+
+    color:
+        var(--muted-text);
+
+    font-size: 0.88rem;
+    line-height: 1.45;
+}
+
+
+/* ----------------------------------------------------------
+   CLUE CARD
+   ---------------------------------------------------------- */
+
+.clue-card {
+    position: relative;
+
+    overflow: hidden;
+
+    min-height: 360px;
+
+    border:
+        1px solid
+        rgb(142 200 255 / 28%);
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            150deg,
+            #063585 0%,
+            #06266a 42%,
+            #03184f 100%
+        );
+
+    box-shadow:
+        0 18px 42px
+        rgb(0 0 0 / 32%),
+        inset 0 1px 0
+        rgb(255 255 255 / 7%);
+
+    cursor: pointer;
+
+    transition:
+        border-color 150ms ease,
+        box-shadow 150ms ease,
+        transform 150ms ease;
+}
+
+.clue-card:hover {
+    border-color:
+        rgb(250 184 130 / 55%);
+
+    box-shadow:
+        0 20px 48px
+        rgb(0 0 0 / 38%),
+        0 0 0 1px
+        rgb(250 184 130 / 12%),
+        inset 0 1px 0
+        rgb(255 255 255 / 7%);
+}
+
+
+.clue-card:focus-visible {
+    outline:
+        3px solid
+        var(--ice-blue);
+
+    outline-offset: 4px;
+}
+
+.clue-card[aria-expanded="false"]::after {
+    content: "Click or tap this box to reveal the response";
+
+    position: absolute;
+    z-index: 2;
+
+    left: 20px;
+    right: 20px;
+    bottom: 55px;
+
+    color:
+        rgb(168 183 206 / 15%);
+
+    font-size: 0.78rem;
+    font-weight: 600;
+    font-style: italic;
+
+    letter-spacing: 0.03em;
+
+    text-align: center;
+
+    pointer-events: none;
+}
+
+/*
+   A subtle glow behind the clue.
+*/
+
+.clue-card::before {
+    content: "";
+
+    position: absolute;
+
+    inset:
+        -40% 10% auto;
+
+    height: 260px;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle,
+            rgb(67 142 255 / 23%),
+            transparent 70%
+        );
+}
+
+
+/* ----------------------------------------------------------
+   CATEGORY
+   ---------------------------------------------------------- */
+
+.category-area {
+    position: relative;
+    z-index: 1;
+
+    padding:
+        24px 26px 20px;
+
+    border-bottom:
+        1px solid
+        rgb(255 255 255 / 10%);
+
+    background:
+        rgb(2 13 50 / 28%);
+
+    text-align: center;
+}
+
+
+.card-label {
+    margin:
+        0 0 8px;
+
+    color:
+        var(--gold);
+
+    font-size: 0.72rem;
+    font-weight: 800;
+
+    letter-spacing: 0.13em;
+
+    text-transform: uppercase;
+}
+
+
+.category-area h2 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size:
+        clamp(
+            1.15rem,
+            4vw,
+            1.7rem
+        );
+
+    line-height: 1.25;
+
+    text-transform: uppercase;
+
+    text-wrap: balance;
+
+    text-shadow:
+        0 2px 8px
+        rgb(0 0 0 / 30%);
+}
+
+
+/* ----------------------------------------------------------
+   CLUE TEXT
+   ---------------------------------------------------------- */
+
+.clue-area {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 210px;
+
+    padding:
+        32px 30px;
+}
+
+
+.clue-text {
+    max-width: 780px;
+
+    margin: 0;
+
+    color: #ffffff;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            1.35rem,
+            4.5vw,
+            2.15rem
+        );
+
+    font-weight: 700;
+
+    line-height: 1.38;
+
+    text-align: center;
+
+    text-wrap: balance;
+
+    text-shadow:
+        0 2px 8px
+        rgb(0 0 0 / 35%);
+}
+
+
+/* ----------------------------------------------------------
+   ANSWER PANEL
+   ---------------------------------------------------------- */
+
+.answer-panel {
+    position: relative;
+    z-index: 1;
+
+    height: 125px;
+    overflow-y: auto;
+
+    margin:
+        0 18px 18px;
+
+    padding:
+        18px 20px;
+
+    border:
+        1px solid
+        rgb(250 184 130 / 38%);
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgb(12 23 42 / 97%),
+            rgb(7 15 29 / 97%)
+        );
+
+    box-shadow:
+        0 10px 24px
+        rgb(0 0 0 / 25%),
+        inset 0 1px 0
+        rgb(255 255 255 / 5%);
+}
+
+.answer-panel[hidden] {
+    display: block !important;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.answer-heading {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 16px;
+
+    margin-bottom: 12px;
+}
+
+
+.answer-heading .card-label {
+    margin: 0;
+}
+
+
+.clue-value {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 34px;
+
+    padding:
+        6px 11px;
+
+    border:
+        1px solid
+        rgb(250 184 130 / 45%);
+
+    border-radius: 999px;
+
+    background:
+        rgb(157 91 52 / 26%);
+
+    color:
+        #ffd8b6;
+
+    font-size: 0.86rem;
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+
+.response-text {
+    margin: 0;
+
+    color:
+        #ffffff;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            1.2rem,
+            3.5vw,
+            1.65rem
+        );
+
+    font-weight: 700;
+
+    line-height: 1.4;
+}
+
+
+/* ----------------------------------------------------------
+   MAIN BUTTONS
+   ---------------------------------------------------------- */
+
+.controls {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+
+    margin-top: 18px;
+}
+
+
+.button {
+    min-height: 54px;
+
+    padding:
+        12px 20px;
+
+    border-radius: 12px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        transform 120ms ease,
+        box-shadow 120ms ease,
+        border-color 120ms ease,
+        background 120ms ease,
+        color 120ms ease;
+}
+
+
+.button:not(:disabled):hover {
+    transform:
+        translateY(-1px);
+}
+
+
+.button:not(:disabled):active {
+    transform:
+        translateY(1px);
+}
+
+
+.button:focus-visible {
+    outline:
+        3px solid
+        var(--ice-blue);
+
+    outline-offset: 3px;
+}
+
+
+.button:disabled {
+    opacity: 0.45;
+
+    cursor: not-allowed;
+}
+
+
+/* NEW CLUE */
+
+.button-primary {
+    border:
+        1px solid
+        #519cec;
+
+    background:
+        linear-gradient(
+            180deg,
+            #2679d5,
+            #1559aa
+        );
+
+    color:
+        #ffffff;
+
+    box-shadow:
+        0 8px 20px
+        rgb(13 59 146 / 32%),
+        inset 0 1px 0
+        rgb(255 255 255 / 18%);
+}
+
+
+.button-primary:not(:disabled):hover {
+    background:
+        linear-gradient(
+            180deg,
+            #348be7,
+            #1a67c2
+        );
+
+    box-shadow:
+        0 10px 24px
+        rgb(13 59 146 / 42%);
+}
+
+
+/* RESPONSE */
+
+.button-secondary {
+    border:
+        1px solid
+        rgb(250 184 130 / 65%);
+
+    background:
+        linear-gradient(
+            180deg,
+            #8d5435,
+            #60341f
+        );
+
+    color:
+        #fff4ea;
+
+    box-shadow:
+        0 8px 20px
+        rgb(92 49 28 / 30%),
+        inset 0 1px 0
+        rgb(255 255 255 / 10%);
+}
+
+
+.button-secondary:not(:disabled):hover {
+    background:
+        linear-gradient(
+            180deg,
+            #a56540,
+            #754027
+        );
+
+    box-shadow:
+        0 10px 24px
+        rgb(92 49 28 / 40%);
+}
+
+
+/* ----------------------------------------------------------
+   STATUS MESSAGE
+   ---------------------------------------------------------- */
+
+.status-message {
+    min-height: 1.4em;
+
+    margin:
+        14px 4px 0;
+
+    color:
+        var(--muted-text);
+
+    font-size: 0.86rem;
+    line-height: 1.4;
+
+    text-align: center;
+}
+
+
+/* Optional classes that JavaScript may use later. */
+
+.status-message.is-error {
+    color:
+        var(--danger);
+}
+
+
+.status-message.is-success {
+    color:
+        var(--success);
+}
+
+
+/* ----------------------------------------------------------
+   RESPONSIVE DESIGN
+   ---------------------------------------------------------- */
+
+@media (
+    max-width: 760px
+) {
+
+    body {
+        padding: 12px;
+    }
+
+
+    .app-shell {
+        padding: 18px;
+
+        border-radius: 18px;
+    }
+
+
+    .app-header {
+        margin-bottom: 22px;
+    }
+
+
+    .topic-panel {
+        padding: 16px;
+    }
+
+
+    .topic-list {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+    }
+
+
+    .category-area {
+        padding:
+            20px 18px 17px;
+    }
+
+
+    .clue-area {
+        min-height: 200px;
+
+        padding:
+            26px 20px;
+    }
+
+
+    .answer-panel {
+        margin:
+            0 12px 12px;
+    }
+
+}
+
+
+@media (
+    max-width: 520px
+) {
+
+    body {
+        padding: 8px;
+    }
+
+
+    .app-shell {
+        padding: 14px;
+
+        border-radius: 15px;
+    }
+
+
+    .intro {
+        font-size: 0.94rem;
+    }
+
+
+    .panel-heading {
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+
+    .text-button {
+        min-height: 32px;
+    }
+
+
+    .topic-list {
+        grid-template-columns:
+            1fr;
+
+        max-height: 280px;
+    }
+
+
+    .topic-option {
+        min-height: 40px;
+    }
+
+
+    .clue-card {
+        min-height: 330px;
+
+        border-radius: 14px;
+    }
+
+
+    .clue-area {
+        min-height: 190px;
+
+        padding:
+            24px 17px;
+    }
+
+
+    .answer-heading {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+    .answer-panel {
+        height: 145px;
+}
+
+    .controls {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .button {
+        min-height: 52px;
+    }
+
+}
+
+
+/* ----------------------------------------------------------
+   REDUCED MOTION
+   ---------------------------------------------------------- */
+
+@media (
+    prefers-reduced-motion: reduce
+) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+
+        transition-duration:
+            0.01ms !important;
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+    }
+
+}

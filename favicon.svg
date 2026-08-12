@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-labelledby="title desc">
+  <title id="title">J! neon game-show favicon</title>
+  <desc id="desc">A metallic condensed J and exclamation mark on a purple, magenta, blue and gold neon background.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#27106f"/>
+      <stop offset="0.34" stop-color="#5c1bd5"/>
+      <stop offset="0.62" stop-color="#e214a6"/>
+      <stop offset="0.82" stop-color="#ff5c72"/>
+      <stop offset="1" stop-color="#1259cf"/>
+    </linearGradient>
+    <radialGradient id="skyGlow" cx="50%" cy="70%" r="68%">
+      <stop offset="0" stop-color="#ffcf40" stop-opacity="0.96"/>
+      <stop offset="0.13" stop-color="#ff6b60" stop-opacity="0.88"/>
+      <stop offset="0.38" stop-color="#f000b8" stop-opacity="0.56"/>
+      <stop offset="0.75" stop-color="#5225e4" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#08185e" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.22" stop-color="#dff8ff"/>
+      <stop offset="0.50" stop-color="#9fc8dc"/>
+      <stop offset="0.66" stop-color="#f8ffff"/>
+      <stop offset="0.86" stop-color="#b8e9ef"/>
+      <stop offset="1" stop-color="#ffffff"/>
+    </linearGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e4ffff"/>
+      <stop offset="0.5" stop-color="#2ea9c3"/>
+      <stop offset="1" stop-color="#10206d"/>
+    </linearGradient>
+    <filter id="softGlow" x="-45%" y="-45%" width="190%" height="190%">
+      <feGaussianBlur stdDeviation="3.7"/>
+    </filter>
+    <filter id="microGlow" x="-35%" y="-35%" width="170%" height="170%">
+      <feGaussianBlur stdDeviation="1.4"/>
+    </filter>
+    <g id="mark" transform="translate(41.7720,83.9627) scale(0.106354,-0.091684)">
+        <path d="M22 -224Q-23 -224 -60 -214V-70Q-48 -74 -35.0 -77.0Q-22 -80 -7 -80Q31 -80 45.5 -53.0Q60 -26 60 47V714H229V55Q229 -53 205.0 -113.5Q181 -174 134.5 -199.0Q88 -224 22 -224Z" transform="translate(0,0)"/>
+        <path d="M204 252H63L39 714H227ZM40 81Q40 126 63.5 150.5Q87 175 133 175Q177 175 200.0 150.5Q223 126 223 81Q223 37 199.0 12.5Q175 -12 133 -12Q90 -12 65.0 12.5Q40 37 40 81Z" transform="translate(251,0)"/>
+    </g>
+    <clipPath id="markClip">
+      <use href="#mark"/>
+    </clipPath>
+  </defs>
+
+  <rect x="1" y="1" width="126" height="126" rx="23" fill="url(#bg)"/>
+  <rect x="1" y="1" width="126" height="126" rx="23" fill="url(#skyGlow)"/>
+
+  <!-- Neon horizon and perspective grid, echoing the source artwork. -->
+  <ellipse cx="64" cy="87" rx="59" ry="15" fill="#ffbd35" opacity="0.22" filter="url(#softGlow)"/>
+  <path d="M4 88.5 H124" stroke="#ffe060" stroke-width="1.4" opacity="0.72"/>
+  <path d="M7 92 H121 M13 100 H115 M21 109 H107 M31 119 H97" stroke="#8feeff" stroke-width="0.7" opacity="0.35"/>
+  <path d="M64 89 L8 128 M64 89 L31 128 M64 89 L51 128 M64 89 L77 128 M64 89 L98 128 M64 89 L120 128" stroke="#65e7ff" stroke-width="0.55" opacity="0.31"/>
+
+  <!-- Tiny star glints. -->
+  <g stroke="#d8fbff" stroke-linecap="round">
+    <path d="M27 16 v10 M22 21 h10" stroke-width="0.9" opacity="0.8"/>
+    <path d="M104 18 v7 M100.5 21.5 h7" stroke-width="0.65" opacity="0.65"/>
+    <path d="M94 36 v5 M91.5 38.5 h5" stroke-width="0.55" opacity="0.7"/>
+  </g>
+  <g fill="#e9ffff" opacity="0.9">
+    <circle cx="45" cy="12" r="0.8"/><circle cx="74" cy="14" r="0.55"/><circle cx="18" cy="39" r="0.5"/><circle cx="111" cy="47" r="0.6"/>
+  </g>
+
+  <!-- Magenta/cyan glow and short dark extrusion. -->
+  <use href="#mark" transform="translate(0,3.7)" fill="#331374" stroke="#26114c" stroke-width="3.8" stroke-linejoin="round" opacity="0.94"/>
+  <use href="#mark" transform="translate(-1.5,1.4)" fill="none" stroke="#ff1ab6" stroke-width="5.4" stroke-linejoin="round" opacity="0.34" filter="url(#microGlow)"/>
+  <use href="#mark" transform="translate(1.5,-0.5)" fill="none" stroke="#2ef1ff" stroke-width="5" stroke-linejoin="round" opacity="0.38" filter="url(#microGlow)"/>
+
+  <!-- Main metallic letters. -->
+  <use href="#mark" fill="url(#metal)" stroke="url(#edge)" stroke-width="2.5" stroke-linejoin="round"/>
+  <use href="#mark" transform="translate(-0.45,-0.7)" fill="none" stroke="#ffffff" stroke-width="0.78" stroke-linejoin="round" opacity="0.86"/>
+
+  <!-- Gloss pass clipped to the letterforms. -->
+  <g clip-path="url(#markClip)" opacity="0.42">
+    <rect x="12" y="20" width="104" height="26" fill="#ffffff"/>
+    <rect x="10" y="65" width="108" height="10" fill="#ecffff" opacity="0.55"/>
+  </g>
+
+  <rect x="1" y="1" width="126" height="126" rx="23" fill="none" stroke="#9cf6ff" stroke-width="1" opacity="0.25"/>
+</svg>

@@ -1,0 +1,12 @@
+# Source spreadsheet — do not upload to GitHub
+source/
+*.xlsx
+
+# Python / OS clutter
+__pycache__/
+*.pyc
+.DS_Store
+
+# Optional local Python environment
+.venv/
+venv/
