@@ -1,0 +1,527 @@
+{
+  "version": "2026-08-11T20:52:57Z",
+  "generatedAt": "2026-08-11T20:52:57Z",
+  "totalClues": 88230,
+  "topics": [
+    {
+      "name": "Advertising",
+      "count": 340,
+      "file": "data/topics/topic-001.json"
+    },
+    {
+      "name": "Ancient History",
+      "count": 631,
+      "file": "data/topics/topic-002.json"
+    },
+    {
+      "name": "Animals",
+      "count": 1452,
+      "file": "data/topics/topic-003.json"
+    },
+    {
+      "name": "Architecture",
+      "count": 279,
+      "file": "data/topics/topic-004.json"
+    },
+    {
+      "name": "Astronomy & Space",
+      "count": 982,
+      "file": "data/topics/topic-005.json"
+    },
+    {
+      "name": "Authors & Works",
+      "count": 5623,
+      "file": "data/topics/topic-006.json"
+    },
+    {
+      "name": "Awards",
+      "count": 682,
+      "file": "data/topics/topic-007.json"
+    },
+    {
+      "name": "Baseball",
+      "count": 432,
+      "file": "data/topics/topic-008.json"
+    },
+    {
+      "name": "Basketball",
+      "count": 295,
+      "file": "data/topics/topic-009.json"
+    },
+    {
+      "name": "Bible",
+      "count": 969,
+      "file": "data/topics/topic-010.json"
+    },
+    {
+      "name": "Biology",
+      "count": 433,
+      "file": "data/topics/topic-011.json"
+    },
+    {
+      "name": "Broadway",
+      "count": 843,
+      "file": "data/topics/topic-012.json"
+    },
+    {
+      "name": "Business",
+      "count": 925,
+      "file": "data/topics/topic-013.json"
+    },
+    {
+      "name": "Calendar & Customs",
+      "count": 593,
+      "file": "data/topics/topic-014.json"
+    },
+    {
+      "name": "Category Mechanics",
+      "count": 3834,
+      "file": "data/topics/topic-015.json"
+    },
+    {
+      "name": "Celebrities",
+      "count": 960,
+      "file": "data/topics/topic-016.json"
+    },
+    {
+      "name": "Characters & Plots",
+      "count": 674,
+      "file": "data/topics/topic-017.json"
+    },
+    {
+      "name": "Chemistry",
+      "count": 554,
+      "file": "data/topics/topic-018.json"
+    },
+    {
+      "name": "Christianity",
+      "count": 585,
+      "file": "data/topics/topic-019.json"
+    },
+    {
+      "name": "Cities",
+      "count": 1605,
+      "file": "data/topics/topic-020.json"
+    },
+    {
+      "name": "Classical Music",
+      "count": 412,
+      "file": "data/topics/topic-021.json"
+    },
+    {
+      "name": "College Sports",
+      "count": 291,
+      "file": "data/topics/topic-022.json"
+    },
+    {
+      "name": "Combat Sports",
+      "count": 209,
+      "file": "data/topics/topic-023.json"
+    },
+    {
+      "name": "Communications",
+      "count": 273,
+      "file": "data/topics/topic-024.json"
+    },
+    {
+      "name": "Current & Recent",
+      "count": 768,
+      "file": "data/topics/topic-025.json"
+    },
+    {
+      "name": "Dance",
+      "count": 301,
+      "file": "data/topics/topic-026.json"
+    },
+    {
+      "name": "Decades",
+      "count": 813,
+      "file": "data/topics/topic-027.json"
+    },
+    {
+      "name": "Design",
+      "count": 186,
+      "file": "data/topics/topic-028.json"
+    },
+    {
+      "name": "Documents & Law",
+      "count": 320,
+      "file": "data/topics/topic-029.json"
+    },
+    {
+      "name": "Earth Science",
+      "count": 808,
+      "file": "data/topics/topic-030.json"
+    },
+    {
+      "name": "Economics & Money",
+      "count": 653,
+      "file": "data/topics/topic-031.json"
+    },
+    {
+      "name": "Education",
+      "count": 771,
+      "file": "data/topics/topic-032.json"
+    },
+    {
+      "name": "Environment",
+      "count": 444,
+      "file": "data/topics/topic-033.json"
+    },
+    {
+      "name": "Exploration",
+      "count": 316,
+      "file": "data/topics/topic-034.json"
+    },
+    {
+      "name": "Facts & Figures",
+      "count": 491,
+      "file": "data/topics/topic-035.json"
+    },
+    {
+      "name": "Family Entertainment",
+      "count": 658,
+      "file": "data/topics/topic-036.json"
+    },
+    {
+      "name": "Folklore",
+      "count": 533,
+      "file": "data/topics/topic-037.json"
+    },
+    {
+      "name": "Food & Drink",
+      "count": 1490,
+      "file": "data/topics/topic-038.json"
+    },
+    {
+      "name": "Football",
+      "count": 371,
+      "file": "data/topics/topic-039.json"
+    },
+    {
+      "name": "Games",
+      "count": 1067,
+      "file": "data/topics/topic-040.json"
+    },
+    {
+      "name": "Games & Comics",
+      "count": 287,
+      "file": "data/topics/topic-041.json"
+    },
+    {
+      "name": "Genres",
+      "count": 561,
+      "file": "data/topics/topic-042.json"
+    },
+    {
+      "name": "Golf",
+      "count": 192,
+      "file": "data/topics/topic-043.json"
+    },
+    {
+      "name": "Hobbies",
+      "count": 264,
+      "file": "data/topics/topic-044.json"
+    },
+    {
+      "name": "Hockey",
+      "count": 184,
+      "file": "data/topics/topic-045.json"
+    },
+    {
+      "name": "Home",
+      "count": 675,
+      "file": "data/topics/topic-046.json"
+    },
+    {
+      "name": "Human Body & Medicine",
+      "count": 1454,
+      "file": "data/topics/topic-047.json"
+    },
+    {
+      "name": "Infrastructure",
+      "count": 297,
+      "file": "data/topics/topic-048.json"
+    },
+    {
+      "name": "Invention",
+      "count": 483,
+      "file": "data/topics/topic-049.json"
+    },
+    {
+      "name": "Landmarks",
+      "count": 584,
+      "file": "data/topics/topic-050.json"
+    },
+    {
+      "name": "Languages",
+      "count": 1403,
+      "file": "data/topics/topic-051.json"
+    },
+    {
+      "name": "Law",
+      "count": 547,
+      "file": "data/topics/topic-052.json"
+    },
+    {
+      "name": "Law & Public Safety",
+      "count": 408,
+      "file": "data/topics/topic-053.json"
+    },
+    {
+      "name": "Map Skills",
+      "count": 438,
+      "file": "data/topics/topic-054.json"
+    },
+    {
+      "name": "Math",
+      "count": 528,
+      "file": "data/topics/topic-055.json"
+    },
+    {
+      "name": "Media",
+      "count": 480,
+      "file": "data/topics/topic-056.json"
+    },
+    {
+      "name": "Media & Publishing",
+      "count": 373,
+      "file": "data/topics/topic-057.json"
+    },
+    {
+      "name": "Military History",
+      "count": 1138,
+      "file": "data/topics/topic-058.json"
+    },
+    {
+      "name": "Mixed Knowledge",
+      "count": 2213,
+      "file": "data/topics/topic-059.json"
+    },
+    {
+      "name": "Modern History",
+      "count": 997,
+      "file": "data/topics/topic-060.json"
+    },
+    {
+      "name": "Movies",
+      "count": 2555,
+      "file": "data/topics/topic-061.json"
+    },
+    {
+      "name": "Museums",
+      "count": 365,
+      "file": "data/topics/topic-062.json"
+    },
+    {
+      "name": "Music",
+      "count": 2675,
+      "file": "data/topics/topic-063.json"
+    },
+    {
+      "name": "Mythology",
+      "count": 657,
+      "file": "data/topics/topic-064.json"
+    },
+    {
+      "name": "Names",
+      "count": 2267,
+      "file": "data/topics/topic-065.json"
+    },
+    {
+      "name": "Olympics",
+      "count": 520,
+      "file": "data/topics/topic-066.json"
+    },
+    {
+      "name": "Opera",
+      "count": 386,
+      "file": "data/topics/topic-067.json"
+    },
+    {
+      "name": "Organizations",
+      "count": 675,
+      "file": "data/topics/topic-068.json"
+    },
+    {
+      "name": "Paleontology",
+      "count": 95,
+      "file": "data/topics/topic-069.json"
+    },
+    {
+      "name": "People",
+      "count": 1461,
+      "file": "data/topics/topic-070.json"
+    },
+    {
+      "name": "People & Places",
+      "count": 696,
+      "file": "data/topics/topic-071.json"
+    },
+    {
+      "name": "Philosophy",
+      "count": 150,
+      "file": "data/topics/topic-072.json"
+    },
+    {
+      "name": "Physical Geography",
+      "count": 1464,
+      "file": "data/topics/topic-073.json"
+    },
+    {
+      "name": "Physics",
+      "count": 520,
+      "file": "data/topics/topic-074.json"
+    },
+    {
+      "name": "Plants",
+      "count": 852,
+      "file": "data/topics/topic-075.json"
+    },
+    {
+      "name": "Political Geography",
+      "count": 1306,
+      "file": "data/topics/topic-076.json"
+    },
+    {
+      "name": "Professions",
+      "count": 327,
+      "file": "data/topics/topic-077.json"
+    },
+    {
+      "name": "Publishing & Titles",
+      "count": 636,
+      "file": "data/topics/topic-078.json"
+    },
+    {
+      "name": "Racing",
+      "count": 340,
+      "file": "data/topics/topic-079.json"
+    },
+    {
+      "name": "Records & Awards",
+      "count": 444,
+      "file": "data/topics/topic-080.json"
+    },
+    {
+      "name": "Reference",
+      "count": 339,
+      "file": "data/topics/topic-081.json"
+    },
+    {
+      "name": "Regional Geography",
+      "count": 717,
+      "file": "data/topics/topic-082.json"
+    },
+    {
+      "name": "Regional History",
+      "count": 830,
+      "file": "data/topics/topic-083.json"
+    },
+    {
+      "name": "Science Survey",
+      "count": 1200,
+      "file": "data/topics/topic-084.json"
+    },
+    {
+      "name": "Shakespeare",
+      "count": 692,
+      "file": "data/topics/topic-085.json"
+    },
+    {
+      "name": "Soccer",
+      "count": 161,
+      "file": "data/topics/topic-086.json"
+    },
+    {
+      "name": "Sports Survey",
+      "count": 637,
+      "file": "data/topics/topic-087.json"
+    },
+    {
+      "name": "Style & Home",
+      "count": 517,
+      "file": "data/topics/topic-088.json"
+    },
+    {
+      "name": "Teams & Venues",
+      "count": 160,
+      "file": "data/topics/topic-089.json"
+    },
+    {
+      "name": "Technology",
+      "count": 334,
+      "file": "data/topics/topic-090.json"
+    },
+    {
+      "name": "Television",
+      "count": 2334,
+      "file": "data/topics/topic-091.json"
+    },
+    {
+      "name": "Tennis",
+      "count": 267,
+      "file": "data/topics/topic-092.json"
+    },
+    {
+      "name": "Theater",
+      "count": 767,
+      "file": "data/topics/topic-093.json"
+    },
+    {
+      "name": "Tools",
+      "count": 272,
+      "file": "data/topics/topic-094.json"
+    },
+    {
+      "name": "Transportation",
+      "count": 717,
+      "file": "data/topics/topic-095.json"
+    },
+    {
+      "name": "Travel",
+      "count": 490,
+      "file": "data/topics/topic-096.json"
+    },
+    {
+      "name": "U.S. Geography",
+      "count": 1276,
+      "file": "data/topics/topic-097.json"
+    },
+    {
+      "name": "U.S. Government",
+      "count": 1356,
+      "file": "data/topics/topic-098.json"
+    },
+    {
+      "name": "U.S. History",
+      "count": 880,
+      "file": "data/topics/topic-099.json"
+    },
+    {
+      "name": "Visual Arts",
+      "count": 946,
+      "file": "data/topics/topic-100.json"
+    },
+    {
+      "name": "Vocabulary",
+      "count": 4244,
+      "file": "data/topics/topic-101.json"
+    },
+    {
+      "name": "World Geography",
+      "count": 1665,
+      "file": "data/topics/topic-102.json"
+    },
+    {
+      "name": "World History",
+      "count": 1383,
+      "file": "data/topics/topic-103.json"
+    },
+    {
+      "name": "World Religions",
+      "count": 283,
+      "file": "data/topics/topic-104.json"
+    }
+  ]
+}
